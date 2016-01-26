@@ -169,7 +169,7 @@ more cases", m_nMoreCases);
 	int nDealBtnLeft = nLeft + nDealBtnSpacing;
 	int nDealBtnRight = nDealBtnLeft + nDealBtnWidth;
 	int rdeal = 0, gdeal = 255, bdeal = 0, adeal = 120;
-        if( !is_cx ) {
+        if( !has_colors ) {
 		rdeal = 139, gdeal = 136, bdeal = 120, adeal = 255;
 	}
 	if( m_eSelection == Deal )
@@ -186,7 +186,7 @@ more cases", m_nMoreCases);
 	int nNoDealBtnLeft = nLeft + nWidth/2 + nDealBtnSpacing;
 	int nNoDealBtnRight = nNoDealBtnLeft + nDealBtnWidth;
 	int rnodeal = 178, gnodeal = 34, bnodeal = 34, anodeal = 120;
-	if( !is_cx ) {
+	if( !has_colors ) {
 		rnodeal = 139, gnodeal = 136, bnodeal = 120, anodeal = 255;
 	}
 	if( m_eSelection == NoDeal )

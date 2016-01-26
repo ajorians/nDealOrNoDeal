@@ -30,7 +30,7 @@ extern "C"
 ScreenObjectsControl::ScreenObjectsControl(SDL_Surface* pScreen, Config* pConfig)
 : m_pScreen(pScreen), m_pConfig(pConfig)
 {
-   m_pFont = is_cx ? nSDL_LoadFont(NSDL_FONT_VGA, 255, 255, 255) : nSDL_LoadFont(NSDL_FONT_VGA, 0, 0, 0);
+   m_pFont = has_colors ? nSDL_LoadFont(NSDL_FONT_VGA, 255, 255, 255) : nSDL_LoadFont(NSDL_FONT_VGA, 0, 0, 0);
    m_pFontLetters = nSDL_LoadFont(NSDL_FONT_VGA, 0, 0, 0);
 
    CursorSprite* pCursor = (CursorSprite*)malloc(sizeof(struct CursorSprite));
@@ -457,10 +457,10 @@ void SelectCaseSprite(SDL_Surface* pScreen, CaseSprite* pSprite)
 
    if( pSprite->nSelectedAmount < PIECE_FADE_LIMIT ) {
       pSprite->nSelectedAmount++;
-      AdjustImage(pSprite->img, is_cx ? true : false);
+      AdjustImage(pSprite->img, has_colors ? true : false);
    }
 
-   if(!is_cx)
+   if(!has_colors)
       draw_rectangle(pScreen, 0, pSprite->x, pSprite->y, pSprite->width, pSprite->height, 1);
 }
 
@@ -488,7 +488,7 @@ void ShadeLabelSprite(SDL_Surface* pScreen, AmountLabelSprite* pSprite, int nBli
    }
    else
    {
-      AdjustImage(pSprite->img, is_cx ? true : false);
+      AdjustImage(pSprite->img, has_colors ? true : false);
    }
 }
 
