@@ -34,7 +34,7 @@ prepare:
 	$(GCC) $(GCCFLAGS) -c $<
 
 $(EXE).elf: $(OBJS)
-	make -p $(DISTDIR)
+	mkdir -p $(DISTDIR)
 	$(LD) $^ -o $(DISTDIR)/$@ $(LDFLAGS)
 
 $(EXE).tns: $(EXE).elf
